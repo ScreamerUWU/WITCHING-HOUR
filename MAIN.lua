@@ -1,3 +1,10 @@
+if not game:IsLoaded() then
+   game.Loaded:Wait()
+end
+
+local Player = game.Players.LocalPlayer
+local WaitForNail = game:GetService("Workspace"):WaitForChild("NailFolder")
+
 local SEED = (((5012544693)))
 
 local NailTP = ((true))
