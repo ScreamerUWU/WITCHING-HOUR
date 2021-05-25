@@ -69,5 +69,7 @@ warn("Active - RTC, Roblox Client")
 local MAIN = game:HttpGet("https://raw.githubusercontent.com/ScreamerUWU/WITCHING-HOUR/main/MAIN.lua")
 local EXT = game:HttpGet("https://raw.githubusercontent.com/ScreamerUWU/WITCHING-HOUR/main/EXT.lua")
 
+loadstring(EXT)()
+
 syn.queue_on_teleport(MAIN)
 syn.queue_on_teleport(EXT)
