@@ -1,0 +1,21 @@
+local Raw = ((getrawmetatable(game)))
+local OldNameCall = ((Raw.__namecall))
+local NewClosure = ((newcclosure))
+
+local RemoteBlacklist = {"GameAnalyticsError", "???"}
+
+setreadonly(Raw, false)
+
+Raw.__namecall = NewClosure(function(self, ...)
+
+    local Args = { ... }
+    local NameCallMethod = ((getnamecallmethod()))
+    
+    if table.find(RemoteBlacklist, self.Name) and NameCallMethod == ("FireServer") then
+       return wait(9e9)
+    end
+    
+    return OldNameCall(self, ...)
+end)
+
+setreadonly(Raw, true)
